@@ -1,0 +1,23 @@
+{
+  "name": "adataviz",
+  "version": "1.0.0",
+  "description": "\"\"",
+  "homepage": "https://github.com/rbrochier/adataviz#readme",
+  "bugs": {
+    "url": "https://github.com/rbrochier/adataviz/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rbrochier/adataviz.git"
+  },
+  "license": "ISC",
+  "author": "Richard Brochier",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
