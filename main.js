@@ -1,3 +1,10 @@
+import { formaterDonnee } from "./utils.js"
+
+
+
+
+
+
 async function getData() {
   const url =
     "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/bp_projets_gagnants/records?limit=20";
