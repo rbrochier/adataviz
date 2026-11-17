@@ -6,17 +6,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
   min-height: 100vh;
   min-height: 100dvh;
-  margin: 0;
-  min-height: 100%;
-  min-width: 100%;
+  margin: 0 5px;
   padding: 0;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   background-color: #f4f3f3;
   font-size: 16px;
   gap: 6px;
+  text-rendering: optimizeLegibility;
 }
 
 header {
@@ -30,20 +28,33 @@ header {
   background-image: url("image_processing20230918-14795-hp29xz.jpg");
   background-size: cover;
   background-position: center;
+  width: 100%;
+  max-width: 1000px;
   min-height: 200px;
-  min-width: 80px;
-  margin: 5px;
-  border-radius: 10px;
+
+  margin: 5px 0;
+  border-radius: 8px;
 }
 
 h1 {
   background-color: #3a59b7;
-  border-radius: 30px;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
   text-align: center;
+  line-height: 1.5;
   color: #eceefd;
   padding: 8px;
   margin: 4px;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #3a59b7;
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
 }
 
 section {
@@ -57,7 +68,7 @@ section {
 
 .recherche {
   color: #071f32;
-  border: 1px solid var(--bleu);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #form-recherche {
@@ -70,10 +81,12 @@ section {
 
 .menu-themes {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #eceefd;
-  border: 2px solid blanchedalmond;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
 }
 
 ul {
@@ -86,19 +99,27 @@ ul {
   background-color: #eceefd;
   color: #3a59b7;
   border-radius: 8px;
-  margin: 5px;
+  margin: 5px 0;
   border: 1px solid;
-  padding-left: 0;
+  padding: 8px 16px;
   width: 100%;
   cursor: pointer;
   gap: 12px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+#liste-themes button:hover {
+  background-color: #3a59b7;
+  color: #eceefd;
+}
 
+#liste-themes button:focus-visible {
+  outline: 3px solid #3a59b7;
+  outline-offset: 2px;
+}
 
 /* classe caché*/
 
 .cache {
-    display: none;
-
+  display: none;
 }
