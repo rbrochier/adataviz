@@ -1,4 +1,4 @@
-import { formaterDonnee } from "./utils.js"
+
 
 const listeThemes = document.getElementById("liste-themes")
 const pageThematique = document.getElementById("page-thematique")
@@ -13,31 +13,27 @@ const menuThemes = document.getElementById("menu-themes");
 const formRecherche = document.getElementById("form-recherche");
 
 
-
-
-
-
-async function getData() {
+async function chercherDonnees() {
   const url =
     "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/bp_projets_gagnants/records?limit=20";
 
   try {
-    const reponse = await fetch(url);
+    const reponse = await fetch(url)
     if (!reponse.ok) {
-      throw new Error(`Response status: ${reponse.status}`);
+      throw new Error(`Statut reponse: ${reponse.status}`);
     }
 
-    const result = await reponse.json();
-    return result ;
-  } catch (error) {
-    console.error(error.message);
+    const resultat = await reponse.json();
+    return resultat ;
+  } catch (erreur) {
+    console.error(erreur.message);
   }
 }
 
-getData();
+chercherDonnees();
 
 async function init() {
-  const data = await getData();
+  const data = await chercherDonnees();
   console.log(data.results);   
 }
 
@@ -45,7 +41,7 @@ init();
 
 
 
-
+resultat();
 
 
 
