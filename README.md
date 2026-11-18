@@ -3,10 +3,10 @@ Recensement des projets lauréats du budget participatif de la ville de Paris.
 
 
 ## Aperçu
-Menu Thematiques
-![Menu des thématiques](captures/screenmenu.jpeg)
-Carte Projet
-![Carte d'un projet](captures/screencarte.jpeg)
+<p align = "center">
+<img src="captures/screenmenu.jpeg" alt="Menu des thématiques" width="300">
+<img src="captures/screencarte.jpeg" alt="Carte Projet" width="300">
+</p>
 
 ## Fonctionnalités
 
