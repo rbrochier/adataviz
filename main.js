@@ -1,5 +1,17 @@
 import { formaterDonnee } from "./utils.js"
 
+const listeThemes = document.getElementById("liste-themes")
+const pageThematique = document.getElementById("page-thematique")
+const thematiqueChoisie = document.getElementById("thematique-choisie")
+const compteurProjets = document.getElementById("compteur-projets")
+const detailProjet = document.getElementById("detail-projet")
+const boutonNavigation = document.getElementById("bouton-navigation")
+const boutonRetour = document.getElementById("bouton-retour")
+const boutonSuivant = document.getElementById("bouton-suivant")
+const retourMenu = document.getElementById("retour-menu")
+const menuThemes = document.getElementById("menu-themes");      
+const formRecherche = document.getElementById("form-recherche");
+
 
 
 
@@ -30,6 +42,19 @@ async function init() {
 }
 
 init();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

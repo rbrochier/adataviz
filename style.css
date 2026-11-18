@@ -80,11 +80,7 @@ section {
 /* Page principale - Menu thematique */
 
 .menu-themes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #eceefd;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
 }
@@ -104,8 +100,9 @@ ul {
   padding: 8px 16px;
   width: 100%;
   cursor: pointer;
-  gap: 12px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 #liste-themes button:hover {
@@ -116,6 +113,60 @@ ul {
 #liste-themes button:focus-visible {
   outline: 3px solid #3a59b7;
   outline-offset: 2px;
+}
+
+#bouton-navigation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Carte Projet */
+
+.carte-projet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eceefd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+#bouton-navigation button {
+  font-family: inherit;
+  background-color: #eceefd;
+  color: #3a59b7;
+  border-radius: 8px;
+  margin: 0;
+  border: 1px solid;
+  padding: 8px 16px;
+  flex: 1 1 calc(50% - 5px);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+#liste-themes button:hover,
+#bouton-navigation button:hover {
+  background-color: #3a59b7;
+  color: #eceefd;
+}
+
+#liste-themes button:focus-visible,
+#bouton-navigation button:focus-visible {
+  outline: 3px solid #3a59b7;
+  outline-offset: 2px;
+}
+
+
+#bouton-navigation button:last-child {
+  flex: 0 0 auto;
+  margin: 0 auto;
+  padding: 8px 32px;
 }
 
 /* classe caché*/
