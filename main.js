@@ -18,13 +18,14 @@ const formRecherche = document.getElementById("form-recherche");
 const chargerDonnees = async () => {
   try {
     const reponse = await fetch(
-      "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/bp_projets_gagnants/records?limit=20",
+      "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/bp_projets_gagnants/records?limit=100",
     );
 
     if (reponse.ok) {
       console.log("Connexion réussie !");
       const jsonReponse = await reponse.json();
       const resultats = jsonReponse.results;
+      return resultats;
       resultats.forEach((element) => {
       console.log(element);
       });
@@ -37,12 +38,10 @@ const chargerDonnees = async () => {
 };
 
 chargerDonnees();
-const resultats = await chargerDonnees
-const projets = resultats.map(formaterDonnees);
-const thematiques = extraireThematiques (projets);
 
+function afficherBouton (thematiques) {
 
-thematiques.forEach((theme) => {
+  thematiques.forEach((theme) => {
   const li = document.createElement("li");
   const bouton = document.createElement("button");
   bouton.textContent = theme;
@@ -50,4 +49,17 @@ thematiques.forEach((theme) => {
   li.appendChild(bouton);
   listeThemes.appendChild(li);
 });
+}
+
+
+async function init () {
+
+const resultats = await chargerDonnees();
+const projets = resultats.map(formaterDonnees);
+const thematiques = extraireThematiques (projets);
+afficherBouton (thematiques); 
+
+}
+
+init();
 
