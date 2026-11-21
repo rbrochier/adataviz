@@ -23,24 +23,25 @@ export const extraireThematiques = (projets) => {
 };
 
 
+ /// function filtrerParCategorie(donnees, valeur)
 
+  export const filtrerParThematique = (projets, valeur) => {
+  const filtreThemes = projets.filter((projet) => projet.thematique === valeur)
+  return filtreThemes;
+ }
 
 
 
 /// function filtrerParNom(donnees, recherche)
 
-const filtrerParNom = (donnees, recherche) => {
+export const filtrerParNom = (donnees, recherche) => {
 
 }
 
- /// function filtrerParCategorie(donnees, valeur)
 
- const filtrerParCategorie = (donnees, valeur) => {
-
- }
 
  /// function trierParNom(donnees)
 
- const trierParNom = (donnees) => {
+ export const trierParNom = (donnees) => {
 
  }

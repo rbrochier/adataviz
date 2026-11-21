@@ -52,6 +52,27 @@ function afficherBouton (thematiques) {
 }
 
 
+function afficherPageThematique (detailProjet) {
+
+
+let projetsDuTheme = filtrerParThematique(results, thematiqueChoisie)
+let indexCourant = 0
+
+const projet = results[indexCourant]
+nomProjet.textContent = projet.titre_projet_gagnant
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
 async function init () {
 
 const resultats = await chargerDonnees();
@@ -60,6 +81,5 @@ const thematiques = extraireThematiques (projets);
 afficherBouton (thematiques); 
 
 }
-
 init();
 
