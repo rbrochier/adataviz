@@ -30,7 +30,7 @@ const chargerDonnees = async () => {
       const jsonReponse = await reponse.json();
       const resultats = jsonReponse.results;
       resultats.forEach((element) => {
-        console.log(element);
+        return resultats;
       });
     } else {
       throw new Error("Erreur Serveur: " + reponse.status);
@@ -78,7 +78,7 @@ const demarrer = async () => {
 demarrer()
 
 
-const afficherProjet = () => {
+  const afficherProjet = () => {
   
   const projet = projetsDuTheme[indexCourant]
   nomProjet.textContent = projet.titre_projet_gagnant
@@ -95,6 +95,6 @@ async function init() {
   const resultats = await chargerDonnees();
   const projets = resultats.map(formaterDonnees);
   const thematiques = extraireThematiques(projets);
-  afficherBouton(thematiques);
+  afficherBouton(thematiques, projets);
 }
 init();

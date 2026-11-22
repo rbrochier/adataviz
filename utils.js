@@ -26,7 +26,7 @@ export const extraireThematiques = (projets) => {
  /// function filtrerParCategorie(donnees, valeur)
 
   export const filtrerParThematique = (projets, valeur) => {
-  const filtreThemes = projets.filter((projet) => projet.thematique === valeur)
+  const filtreThemes = projets.filter((projet) => projet.theme === valeur);
   return filtreThemes;
  }
 
