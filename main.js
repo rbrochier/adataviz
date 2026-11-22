@@ -72,9 +72,9 @@ function afficherBouton(thematiques, projets) {
 const afficherProjet = () => {
   const projet = projetsDuTheme[indexCourant];
   nomProjet.textContent = projet.titre;
-  arrondissementProjet.textContent = projet.arrondissement;
-  avancementProjet.textContent = projet.avancement;
-  budgetProjet.textContent = projet.budget;
+  arrondissementProjet.textContent = "Arrondissement: " + projet.arrondissement;
+  avancementProjet.textContent ="Avancement: " + projet.avancement;
+  budgetProjet.textContent ="Budget: " + projet.budget + " €";
   lienProjet.href = projet.lien;
   compteurProjets.textContent = `Projet ${indexCourant + 1}/${projetsDuTheme.length}`;
 };
