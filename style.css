@@ -198,12 +198,12 @@ footer {
   width: 100%;
   max-width: 1000px;   
   z-index: 10;
-  padding: 4px 8px;
-  font-size: 0.85rem;
+  padding: 1px 2px;
+  font-size: 0.70rem;
   background-color: #3a59b7;
   color: #eceefd;
   text-align: center;
-  border-radius: 8px 8px 0 0;  
+  border-radius: 8px 8px 0 0;
 }
 
 footer a {

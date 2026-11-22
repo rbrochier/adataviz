@@ -124,7 +124,7 @@ retourMenu.addEventListener("click", () => {
 });
 
 async function init() {
-  const resultats = await chargerDonnees();
+  const resultats =  await chargerDonnees();
   const projets = resultats.map(formaterDonnees);
   totalProjets.textContent = `${projets.length} projets lauréats`;
   const thematiques = extraireThematiques(projets);
