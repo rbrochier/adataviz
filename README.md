@@ -86,9 +86,7 @@ Lancer l'application : ouvrir le dossier du projet dans VS Code, puis lancer Liv
 
 
 ## Crédits
-Données : Open Data Paris
-Photo du header : Ville de Paris
-Police : Montserrat, Google Fonts
-Auteur
-
-Richard Brochier, Ada Tech School , promotion Hubertine Auclert, 2026 .
+- Données : Open Data Paris
+- Photo du header : Ville de Paris
+- Police : Montserrat, Google Fonts
+- Auteur : Richard Brochier, Ada Tech School , promotion Hubertine Auclert, 2026 .
