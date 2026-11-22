@@ -4,8 +4,8 @@ Recensement des projets lauréats du budget participatif de la ville de Paris.
 
 ## Aperçu
 <p align = "center">
-<img src="captures/screenmenu.jpeg" alt="Menu des thématiques" width="300">
-<img src="captures/screencarte.jpeg" alt="Carte Projet" width="300">
+<img src="captures/adataviz_1.jpeg" alt="Menu des thématiques" width="300">
+<img src="captures/adataviz_2.jpeg" alt="Carte Projet" width="300">
 </p>
 
 ## Fonctionnalités
