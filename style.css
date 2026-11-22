@@ -189,6 +189,27 @@ ul {
   flex: 1 1 100%;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;            
+  margin: 0 auto;      
+  width: 100%;
+  max-width: 1000px;   
+  z-index: 10;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  background-color: #3a59b7;
+  color: #eceefd;
+  text-align: center;
+  border-radius: 8px 8px 0 0;  
+}
+
+footer a {
+  color: #ffffff;
+}
+
 /* classe caché*/
 
 .cache {
