@@ -13,7 +13,7 @@ Recensement des projets lauréats du budget participatif de la ville de Paris.
 - Menu des thématiques
 - Carte projet : nom, arrondissement, avancement, année, budget, lien
 - Navigation entre les projets : Retour, Suivant, Retour Menu
-- Recherche d'un projet - à venir -
+- Recherche d'un projet : possible par mot contenu dans les titres de projets.
 
 
 ## Sources
@@ -71,14 +71,14 @@ Lancer l'application : ouvrir le dossier du projet dans VS Code, puis lancer Liv
 
 
 ## Structure du projet
-adataviz/
+```adataviz/
 ├── index.html       
 ├── style.css        
 ├── main.js          
 ├── utils.js         
 ├── utils.test.js    
 ├── package.json     
-└── README.md
+└── README.md```
 
 
 
