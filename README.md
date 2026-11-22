@@ -71,6 +71,7 @@ Lancer l'application : ouvrir le dossier du projet dans VS Code, puis lancer Liv
 
 
 ## Structure du projet
+
 ```adataviz/
 ├── index.html       
 ├── style.css        
