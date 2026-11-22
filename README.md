@@ -70,9 +70,18 @@ Lancer l'application : ouvrir le dossier du projet dans VS Code, puis lancer Liv
 ⚠️ Un double-clic sur index.html ne suffit pas. (ton navigateur préféré ne saura géré les modules en local).
 
 
+## Lancer les tests 
+
+Les fonctions de `utils.js` sont testées avec Jest :
+
+```bash
+npm test
+```
+
 ## Structure du projet
 
-```adataviz/
+```
+adataviz/
 ├── index.html       
 ├── style.css        
 ├── main.js          
