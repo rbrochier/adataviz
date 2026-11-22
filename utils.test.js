@@ -1,4 +1,4 @@
-import { filtrerParThematique, formaterDonnees } from "./utils.js";
+import { extraireThematiques, filtrerParThematique, formaterDonnees } from "./utils.js";
 
 describe("filtrerParThematique", () => {
   const projetsTest = [
@@ -19,18 +19,50 @@ describe("filtrerParThematique", () => {
   });
 });
 
-
 describe("formaterDonnées", () => {
-    it ("renvoie une carte avec les champs renommés", () => {
-      const projetBrut = {
+  it("renvoie une carte avec les champs renommés", () => {
+    const projetBrut = {
       titre_projet_gagnant: "Piétonnisation de la rue Saint-Jean",
       thematique: "Mobilités",
-    }
-    const resultat = formaterDonnees(projetBrut)
-    
-    expect(resultat.titre).toBe("Piétonnisation de la rue Saint-Jean")
-    expect(resultat.theme).toBe("Mobilités")
-})
+    };
+    const resultat = formaterDonnees(projetBrut);
 
-    
+    expect(resultat.titre).toBe("Piétonnisation de la rue Saint-Jean");
+    expect(resultat.theme).toBe("Mobilités");
+  });
+});
+
+
+
+describe ("extraireThematique", () => {
+    const projetsTest1 = [
+    { theme: "Mobilités" },
+    { theme: "Cadre de vie" },
+    { theme: "Mobilités" },
+     ];
+
+    const projetsTest2 = [
+    { theme: "Mobilités" },
+    { theme: "Mobilités" },
+    { theme: "Mobilités" },
+     ];
+
+    const projetsTest3 = [];
+
+     it ("retires les doublons", () => {
+        const resultat = extraireThematiques(projetsTest1)
+
+        expect(resultat.length).toBe(2)
+     })
+     it ("retourne 1 seul thème", () =>{
+        const resultat = extraireThematiques(projetsTest2)
+
+        expect(resultat.length).toBe(1)
+     })
+       it ("retourne une liste vide si il n'y a aucun projet", () =>{
+        const resultat = extraireThematiques(projetsTest3)
+
+        expect(resultat.length).toBe(0)
+     })
+
 })
