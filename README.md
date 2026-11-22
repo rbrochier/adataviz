@@ -79,12 +79,13 @@ Lancer l'application : ouvrir le dossier du projet dans VS Code, puis lancer Liv
 ├── utils.js         
 ├── utils.test.js    
 ├── package.json     
-└── README.md```
+└── README.md
+```
 
 
 
 
-Crédits
+## Crédits
 Données : Open Data Paris
 Photo du header : Ville de Paris
 Police : Montserrat, Google Fonts
