@@ -1,4 +1,43 @@
-import { extraireThematiques, filtrerParThematique, formaterDonnees } from "./utils.js";
+import {
+  extraireThematiques,
+  filtrerParNom,
+  filtrerParThematique,
+  formaterDonnees,
+} from "./utils.js";
+
+describe("extraireThematique", () => {
+  const projetsTest1 = [
+    { theme: "Mobilités" },
+    { theme: "Cadre de vie" },
+    { theme: "Mobilités" },
+  ];
+
+  const projetsTest2 = [
+    { theme: "Mobilités" },
+    { theme: "Mobilités" },
+    { theme: "Mobilités" },
+  ];
+
+  const projetsTest3 = [];
+
+  it("retires les doublons", () => {
+    const resultat = extraireThematiques(projetsTest1);
+
+    expect(resultat.length).toBe(2);
+  });
+  it("retourne 1 seul thème", () => {
+    const resultat = extraireThematiques(projetsTest2);
+
+    expect(resultat.length).toBe(1);
+  });
+  it("retourne une liste vide si il n'y a aucun projet", () => {
+    const resultat = extraireThematiques(projetsTest3);
+
+    expect(resultat.length).toBe(0);
+  });
+});
+
+/// function filtrerParCategorie(donnees, valeur)
 
 describe("filtrerParThematique", () => {
   const projetsTest = [
@@ -32,37 +71,26 @@ describe("formaterDonnées", () => {
   });
 });
 
+/// function filtrerParNom(donnees, recherche)
 
+describe("filtrerParNom", () => {
+  const projetsTest = [
+    { titre: "Piétonnisation de la rue Saint-Jean" },
+    { titre: "Jardin partagé" },
+    { titre: "Piste cyclable" },
+  ];
 
-describe ("extraireThematique", () => {
-    const projetsTest1 = [
-    { theme: "Mobilités" },
-    { theme: "Cadre de vie" },
-    { theme: "Mobilités" },
-     ];
+  it("garde les projets dont le titre contient le mot", () => {
+    const resultat = filtrerParNom(projetsTest, "rue");
 
-    const projetsTest2 = [
-    { theme: "Mobilités" },
-    { theme: "Mobilités" },
-    { theme: "Mobilités" },
-     ];
+    expect(resultat).toEqual([
+      { titre: "Piétonnisation de la rue Saint-Jean" },
+    ]);
+  });
 
-    const projetsTest3 = [];
+  it("garde les projets dont le titre contient le mot , peu importe la casse", () => {
+    const resultat = filtrerParNom(projetsTest, "JARDIN");
 
-     it ("retires les doublons", () => {
-        const resultat = extraireThematiques(projetsTest1)
-
-        expect(resultat.length).toBe(2)
-     })
-     it ("retourne 1 seul thème", () =>{
-        const resultat = extraireThematiques(projetsTest2)
-
-        expect(resultat.length).toBe(1)
-     })
-       it ("retourne une liste vide si il n'y a aucun projet", () =>{
-        const resultat = extraireThematiques(projetsTest3)
-
-        expect(resultat.length).toBe(0)
-     })
-
-})
+    expect(resultat).toEqual([{ titre: "Jardin partagé" }]);
+  });
+});

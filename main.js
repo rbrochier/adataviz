@@ -2,7 +2,9 @@ import {
   formaterDonnees,
   extraireThematiques,
   filtrerParThematique,
+  filtrerParNom,
 } from "./utils.js";
+
 /* DOM */
 
 const listeThemes = document.getElementById("liste-themes");
@@ -17,6 +19,7 @@ const retourMenu = document.getElementById("retour-menu");
 const menuThemes = document.getElementById("menu-themes");
 const formRecherche = document.getElementById("form-recherche");
 const totalProjets = document.getElementById("total-projets");
+const champRecherche = document.getElementById("site-search");
 
 const nomProjet = document.querySelector(".nom-projet");
 const arrondissementProjet = document.querySelector(".arrondissement");
@@ -48,6 +51,30 @@ const chargerDonnees = async () => {
   }
 };
 
+const activerRecherche = (projets) => {
+  formRecherche.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const texte = champRecherche.value.trim();
+    const resultats = filtrerParNom(projets, texte);
+
+    if (resultats.length === 0) {
+      thematiqueChoisie.textContent = `Aucun projet pour « ${texte} »`;
+      return;
+    }
+    if (texte === "") {
+      return;
+    }
+
+    projetsDuTheme = resultats;
+    indexCourant = 0;
+    thematiqueChoisie.textContent = `Recherche : ${texte}`;
+    menuThemes.classList.add("cache");
+    pageThematique.classList.remove("cache");
+    afficherProjet();
+  });
+};
+
 function afficherBouton(thematiques, projets) {
   thematiques.forEach((theme) => {
     const li = document.createElement("li");
@@ -73,8 +100,8 @@ const afficherProjet = () => {
   const projet = projetsDuTheme[indexCourant];
   nomProjet.textContent = projet.titre;
   arrondissementProjet.textContent = "Arrondissement: " + projet.arrondissement;
-  avancementProjet.textContent ="Avancement: " + projet.avancement;
-  budgetProjet.textContent ="Budget: " + projet.budget + " €";
+  avancementProjet.textContent = "Avancement: " + projet.avancement;
+  budgetProjet.textContent = "Budget: " + projet.budget + " €";
   lienProjet.href = projet.lien;
   compteurProjets.textContent = `Projet ${indexCourant + 1}/${projetsDuTheme.length}`;
 };
@@ -91,14 +118,10 @@ boutonRetour.addEventListener("click", () => {
   afficherProjet();
 });
 
-
 retourMenu.addEventListener("click", () => {
-      menuThemes.classList.remove("cache");
-      pageThematique.classList.add("cache");
-
+  menuThemes.classList.remove("cache");
+  pageThematique.classList.add("cache");
 });
-
-
 
 async function init() {
   const resultats = await chargerDonnees();
@@ -106,5 +129,6 @@ async function init() {
   totalProjets.textContent = `${projets.length} projets lauréats`;
   const thematiques = extraireThematiques(projets);
   afficherBouton(thematiques, projets);
+  activerRecherche(projets);
 }
 init();
